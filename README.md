@@ -1,6 +1,6 @@
 # NetCare
 
-A new Flutter project.
+
 
 ## Getting Started
 
