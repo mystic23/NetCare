@@ -12,7 +12,20 @@
           "package_name": "com.mycompany.netcare"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "363037802045-nbr061h7ea4sciqpjgdunodsc7g02l8i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.netcare",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "363037802045-83mc0cgof8mn2ba8g1dl5eei4kacbr6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAuLyvHOrjGbSK2n4VwzEZZtlb6-2oQxLY"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363037802045-83mc0cgof8mn2ba8g1dl5eei4kacbr6k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "363037802045-g9e54dmovqqfsdhahmkc2gkb1icd2sr3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.netcare"
+              }
+            }
+          ]
         }
       }
     }

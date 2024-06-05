@@ -282,8 +282,8 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                 ),
                             () => ClipRRect(
                                   borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
+                                  child: Image.asset(
+                                    'assets/images/imagen_2024-06-02_171217811.png',
                                     width: 120.0,
                                     height: 160.0,
                                     fit: BoxFit.cover,
@@ -310,8 +310,8 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                     topLeft: Radius.circular(16.0),
                                     topRight: Radius.circular(0.0),
                                   ),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
+                                  child: Image.asset(
+                                    'assets/images/imagen_2024-06-02_171323157.png',
                                     width: 80.0,
                                     height: 180.0,
                                     fit: BoxFit.cover,
@@ -319,8 +319,8 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                 ),
                             () => ClipRRect(
                                   borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                  child: Image.asset(
+                                    'assets/images/imagen_2024-06-02_171057292.png',
                                     width: 120.0,
                                     height: 160.0,
                                     fit: BoxFit.cover,
@@ -328,8 +328,8 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                 ),
                             () => ClipRRect(
                                   borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
+                                  child: Image.asset(
+                                    'assets/images/NetCare_sin_fondo.png',
                                     width: 120.0,
                                     height: 180.0,
                                     fit: BoxFit.cover,
@@ -342,8 +342,8 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                     topLeft: Radius.circular(16.0),
                                     topRight: Radius.circular(0.0),
                                   ),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1445363692815-ebcd599f7621?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                  child: Image.asset(
+                                    'assets/images/imagen_2024-06-02_171237178.png',
                                     width: 120.0,
                                     height: 190.0,
                                     fit: BoxFit.cover,
@@ -351,8 +351,8 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                 ),
                             () => ClipRRect(
                                   borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                  child: Image.asset(
+                                    'assets/images/imagen_2024-06-02_171346442.png',
                                     width: 120.0,
                                     height: 160.0,
                                     fit: BoxFit.cover,
@@ -360,8 +360,8 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                 ),
                             () => ClipRRect(
                                   borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1443632864897-14973fa006cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                  child: Image.asset(
+                                    'assets/images/imagen_2024-06-02_171424209.png',
                                     width: 120.0,
                                     height: 180.0,
                                     fit: BoxFit.cover,
@@ -374,8 +374,8 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                     topLeft: Radius.circular(16.0),
                                     topRight: Radius.circular(0.0),
                                   ),
-                                  child: Image.network(
-                                    'https://images.unsplash.com/photo-1614597396930-cd6760b99f7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG1vdW50YWluc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
+                                  child: Image.asset(
+                                    'assets/images/imagen_2024-06-02_171443525.png',
                                     width: 120.0,
                                     height: 190.0,
                                     fit: BoxFit.cover,
@@ -383,8 +383,8 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                 ),
                             () => ClipRRect(
                                   borderRadius: BorderRadius.circular(16.0),
-                                  child: Image.network(
-                                    'https://picsum.photos/seed/32/600',
+                                  child: Image.asset(
+                                    'assets/images/imagen_2024-06-02_171537359.png',
                                     width: 120.0,
                                     height: 160.0,
                                     fit: BoxFit.cover,
