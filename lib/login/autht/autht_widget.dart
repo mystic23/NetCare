@@ -219,7 +219,7 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                         ),
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                              .alternate,
                                           boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 4.0,
@@ -331,7 +331,7 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                         }
 
                                                         context.goNamedAuth(
-                                                            'user_home',
+                                                            'SearchIA',
                                                             context.mounted);
                                                       },
                                                       () async {}
@@ -727,10 +727,20 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                                         return;
                                                                       }
 
-                                                                      context.goNamedAuth(
-                                                                          'user_home',
-                                                                          context
-                                                                              .mounted);
+                                                                      context
+                                                                          .pushNamedAuth(
+                                                                        'type_user',
+                                                                        context
+                                                                            .mounted,
+                                                                        queryParameters:
+                                                                            {
+                                                                          'getUser':
+                                                                              serializeParam(
+                                                                            currentUserReference,
+                                                                            ParamType.DocumentReference,
+                                                                          ),
+                                                                        }.withoutNulls,
+                                                                      );
                                                                     },
                                                                     text:
                                                                         'Get Started',
@@ -781,119 +791,6 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                              Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          24.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'Or sign up with',
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
-                                                                              letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Align(
-                                                                    alignment:
-                                                                        const AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          16.0),
-                                                                      child:
-                                                                          Wrap(
-                                                                        spacing:
-                                                                            16.0,
-                                                                        runSpacing:
-                                                                            0.0,
-                                                                        alignment:
-                                                                            WrapAlignment.center,
-                                                                        crossAxisAlignment:
-                                                                            WrapCrossAlignment.center,
-                                                                        direction:
-                                                                            Axis.horizontal,
-                                                                        runAlignment:
-                                                                            WrapAlignment.center,
-                                                                        verticalDirection:
-                                                                            VerticalDirection.down,
-                                                                        clipBehavior:
-                                                                            Clip.none,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                16.0),
-                                                                            child:
-                                                                                FFButtonWidget(
-                                                                              onPressed: () async {
-                                                                                GoRouter.of(context).prepareAuthEvent();
-                                                                                final user = await authManager.signInWithGoogle(context);
-                                                                                if (user == null) {
-                                                                                  return;
-                                                                                }
-
-                                                                                context.goNamedAuth('user_home', context.mounted);
-                                                                              },
-                                                                              text: 'Continue with Google',
-                                                                              icon: const FaIcon(
-                                                                                FontAwesomeIcons.google,
-                                                                                size: 20.0,
-                                                                              ),
-                                                                              options: FFButtonOptions(
-                                                                                width: 230.0,
-                                                                                height: 44.0,
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.bold,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                                elevation: 0.0,
-                                                                                borderSide: BorderSide(
-                                                                                  color: FlutterFlowTheme.of(context).alternate,
-                                                                                  width: 2.0,
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(40.0),
-                                                                                hoverColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
                                                               ),
                                                             ],
                                                           ),
@@ -1290,7 +1187,7 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                                       }
 
                                                                       context.goNamedAuth(
-                                                                          'user_home',
+                                                                          'SearchIA',
                                                                           context
                                                                               .mounted);
                                                                     },
@@ -1421,7 +1318,7 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                                           }
 
                                                                           context.goNamedAuth(
-                                                                              'user_home',
+                                                                              'SearchIA',
                                                                               context.mounted);
                                                                         },
                                                                         text:
@@ -1506,7 +1403,7 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                                       }
 
                                                                       context.goNamedAuth(
-                                                                          'user_home',
+                                                                          'SearchIA',
                                                                           context
                                                                               .mounted);
                                                                     },

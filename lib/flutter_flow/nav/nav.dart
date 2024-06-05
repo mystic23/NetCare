@@ -73,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const UserHomeWidget() : const AuthtWidget(),
+          appStateNotifier.loggedIn ? const SearchIAWidget() : const PreviewWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const UserHomeWidget() : const AuthtWidget(),
+              appStateNotifier.loggedIn ? const SearchIAWidget() : const PreviewWidget(),
         ),
         FFRoute(
           name: 'autht',
@@ -92,19 +92,56 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const UserHomeWidget(),
         ),
         FFRoute(
-          name: 'prub',
-          path: '/prub',
-          builder: (context, params) => const PrubWidget(),
-        ),
-        FFRoute(
           name: 'type_user',
           path: '/typeUser',
-          builder: (context, params) => const TypeUserWidget(),
+          builder: (context, params) => TypeUserWidget(
+            getUser: params.getParam(
+              'getUser',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
         ),
         FFRoute(
           name: 'Preview',
           path: '/preview',
           builder: (context, params) => const PreviewWidget(),
+        ),
+        FFRoute(
+          name: 'Specialist',
+          path: '/specialist',
+          builder: (context, params) => const SpecialistWidget(),
+        ),
+        FFRoute(
+          name: 'SearchIA',
+          path: '/searchIA',
+          builder: (context, params) => const SearchIAWidget(),
+        ),
+        FFRoute(
+          name: 'profile_specialist',
+          path: '/profileSpecialist',
+          requireAuth: true,
+          builder: (context, params) => ProfileSpecialistWidget(
+            getReferenceUser: params.getParam(
+              'getReferenceUser',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'avaliavailability',
+          path: '/avaliavailability',
+          builder: (context, params) => AvaliavailabilityWidget(
+            getAvailability: params.getParam(
+              'getAvailability',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -275,7 +312,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/autht';
+            return '/preview';
           }
           return null;
         },

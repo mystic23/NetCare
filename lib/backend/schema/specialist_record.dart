@@ -8,8 +8,8 @@ import '/backend/schema/util/schema_util.dart';
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
-class UsersRecord extends FirestoreRecord {
-  UsersRecord._(
+class SpecialistRecord extends FirestoreRecord {
+  SpecialistRecord._(
     super.reference,
     super.data,
   ) {
@@ -41,26 +41,6 @@ class UsersRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
-  // "age" field.
-  int? _age;
-  int get age => _age ?? 0;
-  bool hasAge() => _age != null;
-
-  // "uid" field.
-  String? _uid;
-  String get uid => _uid ?? '';
-  bool hasUid() => _uid != null;
-
-  // "is_doctor" field.
-  bool? _isDoctor;
-  bool get isDoctor => _isDoctor ?? false;
-  bool hasIsDoctor() => _isDoctor != null;
-
-  // "display_lastname" field.
-  String? _displayLastname;
-  String get displayLastname => _displayLastname ?? '';
-  bool hasDisplayLastname() => _displayLastname != null;
-
   // "bio" field.
   String? _bio;
   String get bio => _bio ?? '';
@@ -87,10 +67,6 @@ class UsersRecord extends FirestoreRecord {
     _photoUrl = snapshotData['photo_url'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
-    _age = castToType<int>(snapshotData['age']);
-    _uid = snapshotData['uid'] as String?;
-    _isDoctor = snapshotData['is_doctor'] as bool?;
-    _displayLastname = snapshotData['display_lastname'] as String?;
     _bio = snapshotData['bio'] as String?;
     _specialty = snapshotData['specialty'] as String?;
     _rating = castToType<double>(snapshotData['rating']);
@@ -98,48 +74,45 @@ class UsersRecord extends FirestoreRecord {
   }
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('users');
+      FirebaseFirestore.instance.collection('specialist');
 
-  static Stream<UsersRecord> getDocument(DocumentReference ref) =>
-      ref.snapshots().map((s) => UsersRecord.fromSnapshot(s));
+  static Stream<SpecialistRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => SpecialistRecord.fromSnapshot(s));
 
-  static Future<UsersRecord> getDocumentOnce(DocumentReference ref) =>
-      ref.get().then((s) => UsersRecord.fromSnapshot(s));
+  static Future<SpecialistRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => SpecialistRecord.fromSnapshot(s));
 
-  static UsersRecord fromSnapshot(DocumentSnapshot snapshot) => UsersRecord._(
+  static SpecialistRecord fromSnapshot(DocumentSnapshot snapshot) =>
+      SpecialistRecord._(
         snapshot.reference,
         mapFromFirestore(snapshot.data() as Map<String, dynamic>),
       );
 
-  static UsersRecord getDocumentFromData(
+  static SpecialistRecord getDocumentFromData(
     Map<String, dynamic> data,
     DocumentReference reference,
   ) =>
-      UsersRecord._(reference, mapFromFirestore(data));
+      SpecialistRecord._(reference, mapFromFirestore(data));
 
   @override
   String toString() =>
-      'UsersRecord(reference: ${reference.path}, data: $snapshotData)';
+      'SpecialistRecord(reference: ${reference.path}, data: $snapshotData)';
 
   @override
   int get hashCode => reference.path.hashCode;
 
   @override
   bool operator ==(other) =>
-      other is UsersRecord &&
+      other is SpecialistRecord &&
       reference.path.hashCode == other.reference.path.hashCode;
 }
 
-Map<String, dynamic> createUsersRecordData({
+Map<String, dynamic> createSpecialistRecordData({
   String? email,
   String? displayName,
   String? photoUrl,
   DateTime? createdTime,
   String? phoneNumber,
-  int? age,
-  String? uid,
-  bool? isDoctor,
-  String? displayLastname,
   String? bio,
   String? specialty,
   double? rating,
@@ -152,10 +125,6 @@ Map<String, dynamic> createUsersRecordData({
       'photo_url': photoUrl,
       'created_time': createdTime,
       'phone_number': phoneNumber,
-      'age': age,
-      'uid': uid,
-      'is_doctor': isDoctor,
-      'display_lastname': displayLastname,
       'bio': bio,
       'specialty': specialty,
       'rating': rating,
@@ -166,20 +135,16 @@ Map<String, dynamic> createUsersRecordData({
   return firestoreData;
 }
 
-class UsersRecordDocumentEquality implements Equality<UsersRecord> {
-  const UsersRecordDocumentEquality();
+class SpecialistRecordDocumentEquality implements Equality<SpecialistRecord> {
+  const SpecialistRecordDocumentEquality();
 
   @override
-  bool equals(UsersRecord? e1, UsersRecord? e2) {
+  bool equals(SpecialistRecord? e1, SpecialistRecord? e2) {
     return e1?.email == e2?.email &&
         e1?.displayName == e2?.displayName &&
         e1?.photoUrl == e2?.photoUrl &&
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
-        e1?.age == e2?.age &&
-        e1?.uid == e2?.uid &&
-        e1?.isDoctor == e2?.isDoctor &&
-        e1?.displayLastname == e2?.displayLastname &&
         e1?.bio == e2?.bio &&
         e1?.specialty == e2?.specialty &&
         e1?.rating == e2?.rating &&
@@ -187,16 +152,12 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
   }
 
   @override
-  int hash(UsersRecord? e) => const ListEquality().hash([
+  int hash(SpecialistRecord? e) => const ListEquality().hash([
         e?.email,
         e?.displayName,
         e?.photoUrl,
         e?.createdTime,
         e?.phoneNumber,
-        e?.age,
-        e?.uid,
-        e?.isDoctor,
-        e?.displayLastname,
         e?.bio,
         e?.specialty,
         e?.rating,
@@ -204,5 +165,5 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
       ]);
 
   @override
-  bool isValidKey(Object? o) => o is UsersRecord;
+  bool isValidKey(Object? o) => o is SpecialistRecord;
 }

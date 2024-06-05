@@ -81,10 +81,36 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(
         brightness: Brightness.light,
+        scrollbarTheme: ScrollbarThemeData(
+          thumbVisibility: MaterialStateProperty.all(false),
+          trackVisibility: MaterialStateProperty.all(true),
+          thumbColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.dragged)) {
+              return const Color(0xffd2ab80);
+            }
+            if (states.contains(MaterialState.hovered)) {
+              return const Color(0xffd2ab80);
+            }
+            return const Color(0xffd2ab80);
+          }),
+        ),
         useMaterial3: false,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
+        scrollbarTheme: ScrollbarThemeData(
+          thumbVisibility: MaterialStateProperty.all(false),
+          trackVisibility: MaterialStateProperty.all(true),
+          thumbColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.dragged)) {
+              return const Color(0xffd2ab80);
+            }
+            if (states.contains(MaterialState.hovered)) {
+              return const Color(0xffd2ab80);
+            }
+            return const Color(0xffd2ab80);
+          }),
+        ),
         useMaterial3: false,
       ),
       themeMode: _themeMode,
