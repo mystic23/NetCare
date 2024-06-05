@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "363037802045",
+    "project_id": "netcare-73e0b",
+    "storage_bucket": "netcare-73e0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363037802045:android:24d9c98cb7d8ef589eb454",
+        "android_client_info": {
+          "package_name": "com.mycompany.netcare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuLyvHOrjGbSK2n4VwzEZZtlb6-2oQxLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
