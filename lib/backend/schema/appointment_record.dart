@@ -35,11 +35,23 @@ class AppointmentRecord extends FirestoreRecord {
   DocumentReference? get specialist => _specialist;
   bool hasSpecialist() => _specialist != null;
 
+  // "subject" field.
+  String? _subject;
+  String get subject => _subject ?? '';
+  bool hasSubject() => _subject != null;
+
+  // "description" field.
+  String? _description;
+  String get description => _description ?? '';
+  bool hasDescription() => _description != null;
+
   void _initializeFields() {
     _day = snapshotData['day'] as DateTime?;
     _hour = snapshotData['hour'] as DateTime?;
     _user = snapshotData['user'] as DocumentReference?;
     _specialist = snapshotData['specialist'] as DocumentReference?;
+    _subject = snapshotData['subject'] as String?;
+    _description = snapshotData['description'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -81,6 +93,8 @@ Map<String, dynamic> createAppointmentRecordData({
   DateTime? hour,
   DocumentReference? user,
   DocumentReference? specialist,
+  String? subject,
+  String? description,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -88,6 +102,8 @@ Map<String, dynamic> createAppointmentRecordData({
       'hour': hour,
       'user': user,
       'specialist': specialist,
+      'subject': subject,
+      'description': description,
     }.withoutNulls,
   );
 
@@ -102,12 +118,14 @@ class AppointmentRecordDocumentEquality implements Equality<AppointmentRecord> {
     return e1?.day == e2?.day &&
         e1?.hour == e2?.hour &&
         e1?.user == e2?.user &&
-        e1?.specialist == e2?.specialist;
+        e1?.specialist == e2?.specialist &&
+        e1?.subject == e2?.subject &&
+        e1?.description == e2?.description;
   }
 
   @override
-  int hash(AppointmentRecord? e) =>
-      const ListEquality().hash([e?.day, e?.hour, e?.user, e?.specialist]);
+  int hash(AppointmentRecord? e) => const ListEquality().hash(
+      [e?.day, e?.hour, e?.user, e?.specialist, e?.subject, e?.description]);
 
   @override
   bool isValidKey(Object? o) => o is AppointmentRecord;

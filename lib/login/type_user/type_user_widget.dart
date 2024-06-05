@@ -121,28 +121,6 @@ class _TypeUserWidgetState extends State<TypeUserWidget>
                             },
                           ),
                         ),
-                        Expanded(
-                          child: Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
-                            child: Text(
-                              'No-Code Platform Design',
-                              textAlign: TextAlign.start,
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .headlineMediumFamily,
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .headlineMediumFamily),
-                                    lineHeight: 1.2,
-                                  ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
