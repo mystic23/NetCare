@@ -142,6 +142,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['users'],
             ),
           ),
+        ),
+        FFRoute(
+          name: 'info',
+          path: '/info',
+          builder: (context, params) => const InfoWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
