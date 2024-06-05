@@ -331,7 +331,7 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                         }
 
                                                         context.goNamedAuth(
-                                                            'SearchIA',
+                                                            'user_home',
                                                             context.mounted);
                                                       },
                                                       () async {}
@@ -1187,7 +1187,7 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                                       }
 
                                                                       context.goNamedAuth(
-                                                                          'SearchIA',
+                                                                          'user_home',
                                                                           context
                                                                               .mounted);
                                                                     },
@@ -1318,7 +1318,7 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                                           }
 
                                                                           context.goNamedAuth(
-                                                                              'SearchIA',
+                                                                              'user_home',
                                                                               context.mounted);
                                                                         },
                                                                         text:
@@ -1403,7 +1403,7 @@ class _AuthtWidgetState extends State<AuthtWidget>
                                                                       }
 
                                                                       context.goNamedAuth(
-                                                                          'SearchIA',
+                                                                          'user_home',
                                                                           context
                                                                               .mounted);
                                                                     },

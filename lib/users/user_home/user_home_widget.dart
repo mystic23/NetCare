@@ -207,17 +207,6 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
               context.goNamedAuth('Preview', context.mounted);
             },
           ),
-          title: Text(
-            'Page Title',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                  useGoogleFonts: GoogleFonts.asMap().containsKey(
-                      FlutterFlowTheme.of(context).headlineMediumFamily),
-                ),
-          ),
           actions: const [],
           centerTitle: false,
           elevation: 2.0,

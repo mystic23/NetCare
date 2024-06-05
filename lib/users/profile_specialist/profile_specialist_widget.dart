@@ -68,17 +68,6 @@ class _ProfileSpecialistWidgetState extends State<ProfileSpecialistWidget> {
               context.pop();
             },
           ),
-          title: Text(
-            'Page Title',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                  useGoogleFonts: GoogleFonts.asMap().containsKey(
-                      FlutterFlowTheme.of(context).headlineMediumFamily),
-                ),
-          ),
           actions: const [],
           centerTitle: false,
           elevation: 2.0,
@@ -328,8 +317,16 @@ class _ProfileSpecialistWidgetState extends State<ProfileSpecialistWidget> {
                           color: FlutterFlowTheme.of(context).primaryText,
                           size: 24.0,
                         ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
+                        onPressed: () async {
+                          context.pushNamed(
+                            'avaliavailability',
+                            queryParameters: {
+                              'getAvailability': serializeParam(
+                                widget.getReferenceUser,
+                                ParamType.DocumentReference,
+                              ),
+                            }.withoutNulls,
+                          );
                         },
                       ),
                     ),

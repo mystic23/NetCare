@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'info_model.dart';
@@ -75,7 +76,7 @@ class _InfoWidgetState extends State<InfoWidget> {
                     alignment: const AlignmentDirectional(-1.0, -1.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 16.0, 0.0),
                       child: Text(
                         'Help & Information',
                         style:
@@ -89,6 +90,11 @@ class _InfoWidgetState extends State<InfoWidget> {
                                 ),
                       ),
                     ),
+                  ),
+                  StyledDivider(
+                    thickness: 3.0,
+                    color: FlutterFlowTheme.of(context).accent4,
+                    lineStyle: DividerLineStyle.dashed,
                   ),
                   Padding(
                     padding:
@@ -139,6 +145,10 @@ class _InfoWidgetState extends State<InfoWidget> {
                                 ),
                           ),
                         ),
+                        Divider(
+                          thickness: 1.0,
+                          color: FlutterFlowTheme.of(context).accent4,
+                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 8.0, 0.0),
@@ -181,6 +191,10 @@ class _InfoWidgetState extends State<InfoWidget> {
                                 ),
                           ),
                         ),
+                        Divider(
+                          thickness: 1.0,
+                          color: FlutterFlowTheme.of(context).accent4,
+                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 8.0, 0.0),
@@ -222,6 +236,10 @@ class _InfoWidgetState extends State<InfoWidget> {
                                           .bodyMediumFamily),
                                 ),
                           ),
+                        ),
+                        Divider(
+                          thickness: 1.0,
+                          color: FlutterFlowTheme.of(context).accent4,
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(

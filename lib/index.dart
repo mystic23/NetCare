@@ -9,4 +9,4 @@ export '/users/profile_specialist/profile_specialist_widget.dart'
     show ProfileSpecialistWidget;
 export '/users/avaliavailability/avaliavailability_widget.dart'
     show AvaliavailabilityWidget;
-export '/info/info_widget.dart' show InfoWidget;
+export '/users/info/info_widget.dart' show InfoWidget;

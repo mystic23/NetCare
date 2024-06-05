@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'specialist_widget.dart' show SpecialistWidget;
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class SpecialistModel extends FlutterFlowModel<SpecialistWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  List<UsersRecord> simpleSearchResults = [];
 
   @override
   void initState(BuildContext context) {}

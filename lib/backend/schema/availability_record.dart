@@ -30,10 +30,16 @@ class AvailabilityRecord extends FirestoreRecord {
   DocumentReference? get specialist => _specialist;
   bool hasSpecialist() => _specialist != null;
 
+  // "isDisponible" field.
+  bool? _isDisponible;
+  bool get isDisponible => _isDisponible ?? false;
+  bool hasIsDisponible() => _isDisponible != null;
+
   void _initializeFields() {
     _day = snapshotData['day'] as DateTime?;
     _listHour = getDataList(snapshotData['list_hour']);
     _specialist = snapshotData['specialist'] as DocumentReference?;
+    _isDisponible = snapshotData['isDisponible'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -73,11 +79,13 @@ class AvailabilityRecord extends FirestoreRecord {
 Map<String, dynamic> createAvailabilityRecordData({
   DateTime? day,
   DocumentReference? specialist,
+  bool? isDisponible,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'day': day,
       'specialist': specialist,
+      'isDisponible': isDisponible,
     }.withoutNulls,
   );
 
@@ -93,12 +101,13 @@ class AvailabilityRecordDocumentEquality
     const listEquality = ListEquality();
     return e1?.day == e2?.day &&
         listEquality.equals(e1?.listHour, e2?.listHour) &&
-        e1?.specialist == e2?.specialist;
+        e1?.specialist == e2?.specialist &&
+        e1?.isDisponible == e2?.isDisponible;
   }
 
   @override
-  int hash(AvailabilityRecord? e) =>
-      const ListEquality().hash([e?.day, e?.listHour, e?.specialist]);
+  int hash(AvailabilityRecord? e) => const ListEquality()
+      .hash([e?.day, e?.listHour, e?.specialist, e?.isDisponible]);
 
   @override
   bool isValidKey(Object? o) => o is AvailabilityRecord;
