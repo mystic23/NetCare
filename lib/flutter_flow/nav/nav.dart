@@ -1,13 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -147,6 +145,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'info',
           path: '/info',
           builder: (context, params) => const InfoWidget(),
+        ),
+        FFRoute(
+          name: 'Messageerror',
+          path: '/messageerror',
+          builder: (context, params) => const MessageerrorWidget(),
+        ),
+        FFRoute(
+          name: 'Schedules',
+          path: '/schedules',
+          builder: (context, params) => const SchedulesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -331,16 +339,15 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 150.0,
-                    height: 150.0,
-                    child: SpinKitPumpingHeart(
-                      color: FlutterFlowTheme.of(context).primary,
-                      size: 150.0,
-                    ),
-                  ),
-                )
+              ? isWeb
+                  ? Container()
+                  : Container(
+                      color: Colors.transparent,
+                      child: Image.asset(
+                        'assets/images/netcare_logo_sin_fondo.png',
+                        fit: BoxFit.none,
+                      ),
+                    )
               : page;
 
           final transitionInfo = state.transitionInfo;

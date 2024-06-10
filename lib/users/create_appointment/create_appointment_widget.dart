@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -11,7 +12,18 @@ import 'create_appointment_model.dart';
 export 'create_appointment_model.dart';
 
 class CreateAppointmentWidget extends StatefulWidget {
-  const CreateAppointmentWidget({super.key});
+  const CreateAppointmentWidget({
+    super.key,
+    required this.getDateAppointment,
+    required this.getHourAppointment,
+    required this.gatUser,
+    required this.getSpecialist,
+  });
+
+  final DateTime? getDateAppointment;
+  final DateTime? getHourAppointment;
+  final DocumentReference? gatUser;
+  final DocumentReference? getSpecialist;
 
   @override
   State<CreateAppointmentWidget> createState() =>
@@ -421,8 +433,47 @@ class _CreateAppointmentWidgetState extends State<CreateAppointmentWidget>
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 4.0, 0.0),
                                       child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          await AppointmentRecord.collection
+                                              .doc()
+                                              .set(createAppointmentRecordData(
+                                                day: widget.getDateAppointment,
+                                                hour: widget.getHourAppointment,
+                                                user: widget.gatUser,
+                                                specialist:
+                                                    widget.getSpecialist,
+                                                subject: valueOrDefault<String>(
+                                                  _model
+                                                      .projectNameTextController
+                                                      .text,
+                                                  'Asunto',
+                                                ),
+                                                description:
+                                                    valueOrDefault<String>(
+                                                  _model
+                                                      .descriptionTextController
+                                                      .text,
+                                                  'Description',
+                                                ),
+                                              ));
+
+                                          await AvailabilityRecord.collection
+                                              .doc()
+                                              .set({
+                                            ...createAvailabilityRecordData(
+                                              day: widget.getDateAppointment,
+                                              specialist: widget.getSpecialist,
+                                              isDisponible: false,
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'list_hour': [
+                                                  widget.getHourAppointment
+                                                ],
+                                              },
+                                            ),
+                                          });
+                                          Navigator.pop(context);
                                         },
                                         text: 'Create Appointment',
                                         options: FFButtonOptions(
