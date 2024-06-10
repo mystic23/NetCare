@@ -10,3 +10,5 @@ export '/users/profile_specialist/profile_specialist_widget.dart'
 export '/users/avaliavailability/avaliavailability_widget.dart'
     show AvaliavailabilityWidget;
 export '/users/info/info_widget.dart' show InfoWidget;
+export '/messageerror/messageerror_widget.dart' show MessageerrorWidget;
+export '/schedules/schedules_widget.dart' show SchedulesWidget;

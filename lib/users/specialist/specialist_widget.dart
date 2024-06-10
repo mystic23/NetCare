@@ -132,7 +132,11 @@ class _SpecialistWidgetState extends State<SpecialistWidget>
                               specialistUsersRecordList
                                   .map(
                                     (record) => TextSearchItem.fromTerms(
-                                        record, [record.specialty]),
+                                        record, [
+                                      record.specialty,
+                                      record.displayLastname,
+                                      record.displayName
+                                    ]),
                                   )
                                   .toList(),
                             )

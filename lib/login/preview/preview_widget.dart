@@ -492,7 +492,7 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Awesome Recipes',
+                                          'Fast scheduling ',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .displaySmall
@@ -516,7 +516,7 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
-                                            'I have some great food options here!! Yum yum!!',
+                                            'Scheduling a medical appointment has never been easier.',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
@@ -548,7 +548,7 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Personalized recipe discovery',
+                                          'Information at your fingertips',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .displaySmall
@@ -572,7 +572,7 @@ class _PreviewWidgetState extends State<PreviewWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
-                                            'I have some great food options here!! Yum yum!!',
+                                            'Ask the AI about your symptoms and find out which specialist you should go to.',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
